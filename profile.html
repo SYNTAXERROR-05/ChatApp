@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - FutureChat</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/pages.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Navigation Header -->
+        <header class="page-header">
+            <div class="header-content">
+                <div class="logo-container">
+                    <i class="fas fa-comments"></i>
+                    <span>FutureChat</span>
+                </div>
+                <nav class="header-nav">
+                    <a href="chat.html" class="nav-link">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Chat
+                    </a>
+                </nav>
+                <div class="theme-toggle" id="themeToggle">
+                    <div class="toggle-track">
+                        <div class="toggle-thumb">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <div class="profile-container">
+                <div class="profile-header">
+                    <div class="profile-avatar-section">
+                        <div class="avatar-container">
+                            <img src="/placeholder.svg?height=120&width=120" alt="Profile" id="profileImage">
+                            <div class="avatar-overlay">
+                                <button class="change-avatar-btn" onclick="changeAvatar()">
+                                    <i class="fas fa-camera"></i>
+                                </button>
+                            </div>
+                            <div class="status-indicator online"></div>
+                        </div>
+                        <div class="profile-info">
+                            <h1 id="profileName">John Doe</h1>
+                            <p id="profileEmail">john.doe@example.com</p>
+                            <div class="profile-stats">
+                                <div class="stat">
+                                    <span class="stat-number">1,234</span>
+                                    <span class="stat-label">Messages Sent</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">56</span>
+                                    <span class="stat-label">Contacts</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">12</span>
+                                    <span class="stat-label">Groups</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-content">
+                    <div class="profile-tabs">
+                        <button class="tab-btn active" data-tab="personal">
+                            <i class="fas fa-user"></i>
+                            Personal Info
+                        </button>
+                        <button class="tab-btn" data-tab="security">
+                            <i class="fas fa-shield-alt"></i>
+                            Security
+                        </button>
+                        <button class="tab-btn" data-tab="preferences">
+                            <i class="fas fa-cog"></i>
+                            Preferences
+                        </button>
+                        <button class="tab-btn" data-tab="activity">
+                            <i class="fas fa-chart-line"></i>
+                            Activity
+                        </button>
+                    </div>
+
+                    <!-- Personal Info Tab -->
+                    <div class="tab-content active" id="personal">
+                        <div class="form-section">
+                            <h3>Personal Information</h3>
+                            <form class="profile-form" id="personalForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" id="firstName" name="firstName" value="John">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" id="lastName" name="lastName" value="Doe">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" value="john.doe@example.com">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" value="+1 (555) 123-4567">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="bio">Bio</label>
+                                    <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself...">Passionate about technology and communication. Love connecting with people around the world!</textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="location">Location</label>
+                                    <input type="text" id="location" name="location" value="San Francisco, CA">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="website">Website</label>
+                                    <input type="url" id="website" name="website" value="https://johndoe.com">
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn-primary">
+                                        <span>Save Changes</span>
+                                        <i class="fas fa-save"></i>
+                                    </button>
+                                    <button type="button" class="btn-secondary" onclick="resetForm()">
+                                        <span>Reset</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Security Tab -->
+                    <div class="tab-content" id="security">
+                        <div class="form-section">
+                            <h3>Security Settings</h3>
+                            
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <h4>Change Password</h4>
+                                    <p>Update your password to keep your account secure</p>
+                                </div>
+                                <button class="btn-secondary" onclick="showPasswordForm()">
+                                    <span>Change Password</span>
+                                    <i class="fas fa-key"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <h4>Two-Factor Authentication</h4>
+                                    <p>Add an extra layer of security to your account</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="twoFactor" checked>
+                                    <label for="twoFactor"></label>
+                                </div>
+                            </div>
+                            
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <h4>Login Notifications</h4>
+                                    <p>Get notified when someone logs into your account</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="loginNotifications" checked>
+                                    <label for="loginNotifications"></label>
+                                </div>
+                            </div>
+                            
+                            <div class="security-item">
+                                <div class="security-info">
+                                    <h4>Active Sessions</h4>
+                                    <p>Manage devices that are currently logged in</p>
+                                </div>
+                                <button class="btn-secondary" onclick="showActiveSessions()">
+                                    <span>View Sessions</span>
+                                    <i class="fas fa-devices"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Preferences Tab -->
+                    <div class="tab-content" id="preferences">
+                        <div class="form-section">
+                            <h3>Chat Preferences</h3>
+                            
+                            <div class="preference-group">
+                                <h4>Appearance</h4>
+                                <div class="preference-item">
+                                    <label>Theme</label>
+                                    <select id="themeSelect">
+                                        <option value="auto">Auto</option>
+                                        <option value="light">Light</option>
+                                        <option value="dark">Dark</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="preference-item">
+                                    <label>Font Size</label>
+                                    <div class="slider-container">
+                                        <input type="range" id="fontSize" min="12" max="20" value="16">
+                                        <span class="slider-value">16px</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="preference-group">
+                                <h4>Notifications</h4>
+                                <div class="preference-item">
+                                    <label>Message Notifications</label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="messageNotifications" checked>
+                                        <label for="messageNotifications"></label>
+                                    </div>
+                                </div>
+                                
+                                <div class="preference-item">
+                                    <label>Sound Notifications</label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="soundNotifications" checked>
+                                        <label for="soundNotifications"></label>
+                                    </div>
+                                </div>
+                                
+                                <div class="preference-item">
+                                    <label>Notification Sound</label>
+                                    <select id="notificationSound">
+                                        <option value="default">Default</option>
+                                        <option value="chime">Chime</option>
+                                        <option value="bell">Bell</option>
+                                        <option value="pop">Pop</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="preference-group">
+                                <h4>Privacy</h4>
+                                <div class="preference-item">
+                                    <label>Read Receipts</label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="readReceipts" checked>
+                                        <label for="readReceipts"></label>
+                                    </div>
+                                </div>
+                                
+                                <div class="preference-item">
+                                    <label>Online Status</label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="onlineStatus" checked>
+                                        <label for="onlineStatus"></label>
+                                    </div>
+                                </div>
+                                
+                                <div class="preference-item">
+                                    <label>Auto-translate Messages</label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="autoTranslate">
+                                        <label for="autoTranslate"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity Tab -->
+                    <div class="tab-content" id="activity">
+                        <div class="activity-section">
+                            <h3>Account Activity</h3>
+                            
+                            <div class="activity-stats">
+                                <div class="activity-card">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-comments"></i>
+                                    </div>
+                                    <div class="activity-info">
+                                        <h4>Messages This Week</h4>
+                                        <span class="activity-number">247</span>
+                                        <span class="activity-change positive">+12%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-card">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="activity-info">
+                                        <h4>Calls This Week</h4>
+                                        <span class="activity-number">18</span>
+                                        <span class="activity-change positive">+5%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-card">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="activity-info">
+                                        <h4>Time Online</h4>
+                                        <span class="activity-number">24h</span>
+                                        <span class="activity-change negative">-8%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="recent-activity">
+                                <h4>Recent Activity</h4>
+                                <div class="activity-list">
+                                    <div class="activity-item">
+                                        <div class="activity-time">2 hours ago</div>
+                                        <div class="activity-description">
+                                            <i class="fas fa-sign-in-alt"></i>
+                                            Logged in from Chrome on Windows
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="activity-item">
+                                        <div class="activity-time">1 day ago</div>
+                                        <div class="activity-description">
+                                            <i class="fas fa-user-edit"></i>
+                                            Updated profile information
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="activity-item">
+                                        <div class="activity-time">3 days ago</div>
+                                        <div class="activity-description">
+                                            <i class="fas fa-key"></i>
+                                            Changed account password
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="activity-item">
+                                        <div class="activity-time">1 week ago</div>
+                                        <div class="activity-description">
+                                            <i class="fas fa-shield-alt"></i>
+                                            Enabled two-factor authentication
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="scripts/main.js"></script>
+    <script src="scripts/profile.js"></script>
+</body>
+</html>

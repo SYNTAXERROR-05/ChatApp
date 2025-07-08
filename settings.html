@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - FutureChat</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/pages.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Navigation Header -->
+        <header class="page-header">
+            <div class="header-content">
+                <div class="logo-container">
+                    <i class="fas fa-comments"></i>
+                    <span>FutureChat</span>
+                </div>
+                <nav class="header-nav">
+                    <a href="chat.html" class="nav-link">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Chat
+                    </a>
+                </nav>
+                <div class="theme-toggle" id="themeToggle">
+                    <div class="toggle-track">
+                        <div class="toggle-thumb">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Settings Section -->
+        <section class="settings-section">
+            <div class="settings-container">
+                <div class="settings-sidebar">
+                    <div class="settings-nav">
+                        <div class="nav-item active" data-section="general">
+                            <i class="fas fa-cog"></i>
+                            <span>General</span>
+                        </div>
+                        <div class="nav-item" data-section="appearance">
+                            <i class="fas fa-palette"></i>
+                            <span>Appearance</span>
+                        </div>
+                        <div class="nav-item" data-section="notifications">
+                            <i class="fas fa-bell"></i>
+                            <span>Notifications</span>
+                        </div>
+                        <div class="nav-item" data-section="privacy">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Privacy</span>
+                        </div>
+                        <div class="nav-item" data-section="language">
+                            <i class="fas fa-language"></i>
+                            <span>Language</span>
+                        </div>
+                        <div class="nav-item" data-section="storage">
+                            <i class="fas fa-database"></i>
+                            <span>Storage</span>
+                        </div>
+                        <div class="nav-item" data-section="advanced">
+                            <i class="fas fa-tools"></i>
+                            <span>Advanced</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-content">
+                    <!-- General Settings -->
+                    <div class="settings-panel active" id="general">
+                        <div class="panel-header">
+                            <h2>General Settings</h2>
+                            <p>Configure your basic FutureChat preferences</p>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Account</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Profile Visibility</label>
+                                    <p>Control who can see your profile information</p>
+                                </div>
+                                <select class="setting-select">
+                                    <option value="everyone">Everyone</option>
+                                    <option value="contacts">Contacts Only</option>
+                                    <option value="nobody">Nobody</option>
+                                </select>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Auto-save Conversations</label>
+                                    <p>Automatically save chat history to cloud</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="autoSave" checked>
+                                    <label for="autoSave"></label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Download Quality</label>
+                                    <p>Default quality for media downloads</p>
+                                </div>
+                                <select class="setting-select">
+                                    <option value="high">High Quality</option>
+                                    <option value="medium" selected>Medium Quality</option>
+                                    <option value="low">Low Quality</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Startup</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Launch on System Startup</label>
+                                    <p>Start FutureChat when your computer boots</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="launchStartup">
+                                    <label for="launchStartup"></label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Minimize to System Tray</label>
+                                    <p>Keep FutureChat running in the background</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="minimizeToTray" checked>
+                                    <label for="minimizeToTray"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Appearance Settings -->
+                    <div class="settings-panel" id="appearance">
+                        <div class="panel-header">
+                            <h2>Appearance</h2>
+                            <p>Customize the look and feel of FutureChat</p>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Theme</h3>
+                            <div class="theme-options">
+                                <div class="theme-option active" data-theme="auto">
+                                    <div class="theme-preview auto">
+                                        <div class="preview-header"></div>
+                                        <div class="preview-content">
+                                            <div class="preview-sidebar"></div>
+                                            <div class="preview-chat"></div>
+                                        </div>
+                                    </div>
+                                    <span>Auto</span>
+                                </div>
+                                <div class="theme-option" data-theme="light">
+                                    <div class="theme-preview light">
+                                        <div class="preview-header"></div>
+                                        <div class="preview-content">
+                                            <div class="preview-sidebar"></div>
+                                            <div class="preview-chat"></div>
+                                        </div>
+                                    </div>
+                                    <span>Light</span>
+                                </div>
+                                <div class="theme-option" data-theme="dark">
+                                    <div class="theme-preview dark">
+                                        <div class="preview-header"></div>
+                                        <div class="preview-content">
+                                            <div class="preview-sidebar"></div>
+                                            <div class="preview-chat"></div>
+                                        </div>
+                                    </div>
+                                    <span>Dark</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Customization</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Font Size</label>
+                                    <p>Adjust text size for better readability</p>
+                                </div>
+                                <div class="slider-container">
+                                    <input type="range" id="fontSizeSlider" min="12" max="20" value="16">
+                                    <span class="slider-value">16px</span>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Chat Bubble Style</label>
+                                    <p>Choose your preferred message bubble design</p>
+                                </div>
+                                <select class="setting-select">
+                                    <option value="rounded">Rounded</option>
+                                    <option value="square">Square</option>
+                                    <option value="minimal">Minimal</option>
+                                </select>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Animations</label>
+                                    <p>Enable smooth animations and transitions</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="animations" checked>
+                                    <label for="animations"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Settings -->
+                    <div class="settings-panel" id="notifications">
+                        <div class="panel-header">
+                            <h2>Notifications</h2>
+                            <p>Control how and when you receive notifications</p>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Desktop Notifications</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Enable Notifications</label>
+                                    <p>Show desktop notifications for new messages</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="desktopNotifications" checked>
+                                    <label for="desktopNotifications"></label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Show Message Preview</label>
+                                    <p>Display message content in notifications</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="messagePreview" checked>
+                                    <label for="messagePreview"></label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Notification Sound</label>
+                                    <p>Play sound when receiving notifications</p>
+                                </div>
+                                <div class="sound-controls">
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="notificationSound" checked>
+                                        <label for="notificationSound"></label>
+                                    </div>
+                                    <select class="setting-select">
+                                        <option value="default">Default</option>
+                                        <option value="chime">Chime</option>
+                                        <option value="bell">Bell</option>
+                                        <option value="pop">Pop</option>
+                                    </select>
+                                    <button class="btn-secondary test-sound">Test</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Do Not Disturb</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Quiet Hours</label>
+                                    <p>Automatically disable notifications during specified hours</p>
+                                </div>
+                                <div class="time-range">
+                                    <input type="time" value="22:00">
+                                    <span>to</span>
+                                    <input type="time" value="08:00">
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Weekend Mode</label>
+                                    <p>Reduce notifications on weekends</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="weekendMode">
+                                    <label for="weekendMode"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Privacy Settings -->
+                    <div class="settings-panel" id="privacy">
+                        <div class="panel-header">
+                            <h2>Privacy & Security</h2>
+                            <p>Manage your privacy and security preferences</p>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Message Privacy</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Read Receipts</label>
+                                    <p>Let others know when you've read their messages</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="readReceipts" checked>
+                                    <label for="readReceipts"></label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Typing Indicators</label>
+                                    <p>Show when you're typing to others</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="typingIndicators" checked>
+                                    <label for="typingIndicators"></label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Online Status</label>
+                                    <p>Show your online status to contacts</p>
+                                </div>
+                                <select class="setting-select">
+                                    <option value="everyone">Everyone</option>
+                                    <option value="contacts">Contacts Only</option>
+                                    <option value="nobody">Nobody</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Data & Storage</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Auto-download Media</label>
+                                    <p>Automatically download images and files</p>
+                                </div>
+                                <select class="setting-select">
+                                    <option value="always">Always</option>
+                                    <option value="wifi">Wi-Fi Only</option>
+                                    <option value="never">Never</option>
+                                </select>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Message History</label>
+                                    <p>How long to keep message history</p>
+                                </div>
+                                <select class="setting-select">
+                                    <option value="forever">Forever</option>
+                                    <option value="1year">1 Year</option>
+                                    <option value="6months">6 Months</option>
+                                    <option value="3months">3 Months</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Language Settings -->
+                    <div class="settings-panel" id="language">
+                        <div class="panel-header">
+                            <h2>Language & Region</h2>
+                            <p>Configure language and regional preferences</p>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Interface Language</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Display Language</label>
+                                    <p>Language for menus and interface</p>
+                                </div>
+                                <select class="setting-select">
+                                    <option value="en">English</option>
+                                    <option value="es">Español</option>
+                                    <option value="fr">Français</option>
+                                    <option value="de">Deutsch</option>
+                                    <option value="zh">中文</option>
+                                    <option value="ja">日本語</option>
+                                </select>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Date Format</label>
+                                    <p>How dates are displayed</p>
+                                </div>
+                                <select class="setting-select">
+                                    <option value="mdy">MM/DD/YYYY</option>
+                                    <option value="dmy">DD/MM/YYYY</option>
+                                    <option value="ymd">YYYY/MM/DD</option>
+                                </select>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Time Format</label>
+                                    <p>12-hour or 24-hour time display</p>
+                                </div>
+                                <select class="setting-select">
+                                    <option value="12">12-hour (AM/PM)</option>
+                                    <option value="24">24-hour</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Translation</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Auto-translate Messages</label>
+                                    <p>Automatically translate messages to your language</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="autoTranslate">
+                                    <label for="autoTranslate"></label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Translation Service</label>
+                                    <p>Choose your preferred translation provider</p>
+                                </div>
+                                <select class="setting-select">
+                                    <option value="google">Google Translate</option>
+                                    <option value="microsoft">Microsoft Translator</option>
+                                    <option value="deepl">DeepL</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Storage Settings -->
+                    <div class="settings-panel" id="storage">
+                        <div class="panel-header">
+                            <h2>Storage & Data</h2>
+                            <p>Manage your storage usage and data preferences</p>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Storage Usage</h3>
+                            <div class="storage-overview">
+                                <div class="storage-item">
+                                    <div class="storage-info">
+                                        <span class="storage-label">Messages</span>
+                                        <span class="storage-size">245 MB</span>
+                                    </div>
+                                    <div class="storage-bar">
+                                        <div class="storage-fill" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                                <div class="storage-item">
+                                    <div class="storage-info">
+                                        <span class="storage-label">Media</span>
+                                        <span class="storage-size">1.2 GB</span>
+                                    </div>
+                                    <div class="storage-bar">
+                                        <div class="storage-fill" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <div class="storage-item">
+                                    <div class="storage-info">
+                                        <span class="storage-label">Cache</span>
+                                        <span class="storage-size">89 MB</span>
+                                    </div>
+                                    <div class="storage-bar">
+                                        <div class="storage-fill" style="width: 30%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Data Management</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Clear Cache</label>
+                                    <p>Remove temporary files to free up space</p>
+                                </div>
+                                <button class="btn-secondary" onclick="clearCache()">
+                                    <span>Clear Cache</span>
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Export Data</label>
+                                    <p>Download a copy of your chat history</p>
+                                </div>
+                                <button class="btn-secondary" onclick="exportData()">
+                                    <span>Export Data</span>
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Delete All Data</label>
+                                    <p>Permanently remove all your data</p>
+                                </div>
+                                <button class="btn-danger" onclick="deleteAllData()">
+                                    <span>Delete All</span>
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Settings -->
+                    <div class="settings-panel" id="advanced">
+                        <div class="panel-header">
+                            <h2>Advanced Settings</h2>
+                            <p>Advanced configuration options for power users</p>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Performance</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Hardware Acceleration</label>
+                                    <p>Use GPU acceleration for better performance</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="hardwareAcceleration" checked>
+                                    <label for="hardwareAcceleration"></label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Background Sync</label>
+                                    <p>Keep messages synced when app is closed</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="backgroundSync" checked>
+                                    <label for="backgroundSync"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Developer Options</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Debug Mode</label>
+                                    <p>Enable debugging features and console logs</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="debugMode">
+                                    <label for="debugMode"></label>
+                                </div>
+                            </div>
+
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Beta Features</label>
+                                    <p>Access experimental features before public release</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="betaFeatures">
+                                    <label for="betaFeatures"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Reset</h3>
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <label>Reset Settings</label>
+                                    <p>Restore all settings to default values</p>
+                                </div>
+                                <button class="btn-secondary" onclick="resetSettings()">
+                                    <span>Reset to Default</span>
+                                    <i class="fas fa-undo"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="scripts/main.js"></script>
+    <script src="scripts/settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - FutureChat</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/chat.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-mini">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="theme-toggle" id="themeToggle">
+                    <div class="toggle-track">
+                        <div class="toggle-thumb">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-item active" data-section="chats">
+                    <i class="fas fa-comments"></i>
+                    <span class="nav-label">Chats</span>
+                    <div class="notification-badge">3</div>
+                </div>
+                <div class="nav-item" data-section="contacts">
+                    <i class="fas fa-address-book"></i>
+                    <span class="nav-label">Contacts</span>
+                </div>
+                <div class="nav-item" data-section="notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="nav-label">Notifications</span>
+                    <div class="notification-badge">5</div>
+                </div>
+                <div class="nav-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span class="nav-label">Settings</span>
+                </div>
+                <div class="nav-item" data-section="help">
+                    <i class="fas fa-question-circle"></i>
+                    <span class="nav-label">Help</span>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile" id="userProfile">
+                    <div class="profile-avatar">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Profile">
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="profile-info">
+                        <span class="profile-name">John Doe</span>
+                        <span class="profile-status">Online</span>
+                    </div>
+                    <i class="fas fa-chevron-up dropdown-arrow"></i>
+                </div>
+                
+                <div class="profile-dropdown" id="profileDropdown">
+                    <div class="dropdown-item" onclick="navigateTo('profile.html')">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </div>
+                    <div class="dropdown-item" onclick="navigateTo('settings.html')">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </div>
+                    <div class="dropdown-item logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="app-info">
+                    <h1 class="app-name">
+                        <span class="gradient-text">Future</span>Chat
+                    </h1>
+                </div>
+                
+                <div class="top-actions">
+                    <button class="action-btn" title="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="action-btn" title="New Chat">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button class="action-btn" title="More Options">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Chat Area -->
+            <div class="chat-area">
+                <!-- Contact List -->
+                <div class="contact-panel">
+                    <div class="search-container">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search conversations...">
+                        </div>
+                    </div>
+                    
+                    <div class="contact-list">
+                        <div class="contact-item active">
+                            <div class="contact-avatar">
+                                <img src="/placeholder.svg?height=50&width=50" alt="Sarah">
+                                <div class="status-indicator online"></div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-name">Sarah Johnson</div>
+                                <div class="last-message">Hey! How are you doing? 😊</div>
+                                <div class="message-time">2 min ago</div>
+                            </div>
+                            <div class="unread-badge">2</div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-avatar">
+                                <img src="/placeholder.svg?height=50&width=50" alt="Mike">
+                                <div class="status-indicator away"></div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-name">Mike Chen</div>
+                                <div class="last-message">Thanks for the help!</div>
+                                <div class="message-time">1 hour ago</div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-avatar">
+                                <img src="/placeholder.svg?height=50&width=50" alt="Team">
+                                <div class="status-indicator"></div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-name">Design Team</div>
+                                <div class="last-message">New mockups are ready</div>
+                                <div class="message-time">3 hours ago</div>
+                            </div>
+                            <div class="unread-badge">5</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chat Window -->
+                <div class="chat-window">
+                    <div class="chat-header">
+                        <div class="chat-contact">
+                            <div class="contact-avatar">
+                                <img src="/placeholder.svg?height=40&width=40" alt="Sarah">
+                                <div class="status-indicator online"></div>
+                            </div>
+                            <div class="contact-details">
+                                <div class="contact-name">Sarah Johnson</div>
+                                <div class="contact-status">
+                                    <span class="typing-indicator">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </span>
+                                    typing...
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-actions">
+                            <button class="chat-action-btn" title="Voice Call">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button class="chat-action-btn" title="Video Call">
+                                <i class="fas fa-video"></i>
+                            </button>
+                            <button class="chat-action-btn" title="More Options">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="messages-container" id="messagesContainer">
+                        <div class="message received">
+                            <div class="message-avatar">
+                                <img src="/placeholder.svg?height=32&width=32" alt="Sarah">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-bubble">
+                                    <p>Hey! How are you doing? 😊</p>
+                                    <div class="message-time">2:30 PM</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="message sent">
+                            <div class="message-content">
+                                <div class="message-bubble">
+                                    <p>I'm doing great! Just working on some new designs. How about you?</p>
+                                    <div class="message-time">2:32 PM</div>
+                                    <div class="message-status">
+                                        <i class="fas fa-check-double"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="message received">
+                            <div class="message-avatar">
+                                <img src="/placeholder.svg?height=32&width=32" alt="Sarah">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-bubble">
+                                    <p>That sounds exciting! I'd love to see them when you're ready to share.</p>
+                                    <div class="message-time">2:35 PM</div>
+                                    <div class="translate-badge">
+                                        <i class="fas fa-language"></i>
+                                        <span>Translated</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="message-input-container">
+                        <div class="input-actions">
+                            <button class="input-action-btn" title="Attach File">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <button class="input-action-btn" title="Emoji">
+                                <i class="fas fa-smile"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="message-input">
+                            <input type="text" placeholder="Type a message..." id="messageInput">
+                        </div>
+                        
+                        <div class="send-actions">
+                            <button class="voice-btn" title="Voice Message">
+                                <i class="fas fa-microphone"></i>
+                                <div class="pulse-ring"></div>
+                            </button>
+                            <button class="send-btn" id="sendBtn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="scripts/main.js"></script>
+    <script src="scripts/chat.js"></script>
+</body>
+</html>
