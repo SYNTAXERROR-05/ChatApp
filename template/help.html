@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - FutureChat</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/animations.css">
+    <link rel="stylesheet" href="/src/styles/pages.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Navigation Header -->
+        <header class="page-header">
+            <div class="header-content">
+                <div class="logo-container">
+                    <i class="fas fa-comments"></i>
+                    <span>FutureChat</span>
+                </div>
+                <nav class="header-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="help.html" class="nav-link active">Help</a>
+                    <a href="login.html" class="nav-link">Login</a>
+                </nav>
+                <div class="theme-toggle" id="themeToggle">
+                    <div class="toggle-track">
+                        <div class="toggle-thumb">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Help <span class="gradient-text">Center</span></h1>
+                <p class="hero-subtitle">Find answers to your questions and get the most out of FutureChat</p>
+                
+                <!-- Search Bar -->
+                <div class="help-search">
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search for help articles..." id="helpSearch">
+                        <button class="search-btn">Search</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Help Section -->
+        <section class="quick-help-section">
+            <div class="section-header">
+                <h2>Quick Help</h2>
+                <p>Common questions and quick solutions</p>
+            </div>
+            
+            <div class="quick-help-grid">
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>Getting Started</h3>
+                    <p>Learn how to create your account and set up your profile</p>
+                    <a href="#getting-started" class="help-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Sending Messages</h3>
+                    <p>Master the art of messaging with text, voice, and media</p>
+                    <a href="#messaging" class="help-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Privacy & Security</h3>
+                    <p>Understand how we protect your data and conversations</p>
+                    <a href="#security" class="help-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>Settings</h3>
+                    <p>Customize your FutureChat experience</p>
+                    <a href="#settings" class="help-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to the most common questions</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-category" id="getting-started">
+                    <h3 class="category-title">
+                        <i class="fas fa-user-plus"></i>
+                        Getting Started
+                    </h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How do I create a FutureChat account?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Creating a FutureChat account is simple:</p>
+                            <ol>
+                                <li>Click the "Get Started" button on the homepage</li>
+                                <li>Choose "Sign Up" and fill in your details</li>
+                                <li>Verify your email address</li>
+                                <li>Complete your profile setup</li>
+                                <li>Start chatting with friends and colleagues!</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Is FutureChat free to use?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! FutureChat offers a comprehensive free tier that includes:</p>
+                            <ul>
+                                <li>Unlimited messaging</li>
+                                <li>Voice and video calls</li>
+                                <li>File sharing up to 100MB</li>
+                                <li>Basic themes and customization</li>
+                            </ul>
+                            <p>Premium features are available with our Pro subscription.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-category" id="messaging">
+                    <h3 class="category-title">
+                        <i class="fas fa-comments"></i>
+                        Messaging
+                    </h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How do I send voice messages?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sending voice messages is easy:</p>
+                            <ol>
+                                <li>Open a chat conversation</li>
+                                <li>Press and hold the microphone button</li>
+                                <li>Speak your message</li>
+                                <li>Release to send, or slide to cancel</li>
+                            </ol>
+                            <p>Voice messages are automatically enhanced with noise reduction technology.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can I translate messages in real-time?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! FutureChat includes AI-powered real-time translation:</p>
+                            <ul>
+                                <li>Automatic language detection</li>
+                                <li>Support for 100+ languages</li>
+                                <li>Instant translation with high accuracy</li>
+                                <li>Translation badges show when messages are translated</li>
+                            </ul>
+                            <p>Enable auto-translation in Settings > Language.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-category" id="security">
+                    <h3 class="category-title">
+                        <i class="fas fa-shield-alt"></i>
+                        Privacy & Security
+                    </h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How secure are my conversations?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Your privacy is our top priority:</p>
+                            <ul>
+                                <li><strong>End-to-end encryption:</strong> Only you and the recipient can read messages</li>
+                                <li><strong>Zero-knowledge architecture:</strong> We can't access your conversations</li>
+                                <li><strong>Secure servers:</strong> Military-grade security infrastructure</li>
+                                <li><strong>Regular audits:</strong> Third-party security assessments</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can I delete messages after sending?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, you have full control over your messages:</p>
+                            <ul>
+                                <li>Delete for yourself only</li>
+                                <li>Delete for everyone (within 24 hours)</li>
+                                <li>Edit messages (within 15 minutes)</li>
+                                <li>Set disappearing messages timer</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-category" id="settings">
+                    <h3 class="category-title">
+                        <i class="fas fa-cog"></i>
+                        Settings & Customization
+                    </h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How do I change themes?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Customize your FutureChat experience:</p>
+                            <ol>
+                                <li>Click the theme toggle in the top bar</li>
+                                <li>Or go to Settings > Appearance</li>
+                                <li>Choose from Light, Dark, or Auto modes</li>
+                                <li>Customize accent colors (Pro feature)</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How do I manage notifications?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Control your notification preferences:</p>
+                            <ul>
+                                <li>Go to Settings > Notifications</li>
+                                <li>Enable/disable push notifications</li>
+                                <li>Set quiet hours</li>
+                                <li>Customize notification sounds</li>
+                                <li>Choose notification preview level</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Support Section -->
+        <section class="support-section">
+            <div class="support-content">
+                <div class="support-info">
+                    <h2>Still Need Help?</h2>
+                    <p>Our support team is here to assist you 24/7</p>
+                    
+                    <div class="support-options">
+                        <div class="support-option">
+                            <div class="support-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="support-details">
+                                <h3>Live Chat</h3>
+                                <p>Get instant help from our support team</p>
+                                <button class="btn-primary" onclick="startLiveChat()">Start Chat</button>
+                            </div>
+                        </div>
+                        
+                        <div class="support-option">
+                            <div class="support-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="support-details">
+                                <h3>Email Support</h3>
+                                <p>Send us a detailed message</p>
+                                <button class="btn-secondary" onclick="openEmailSupport()">Send Email</button>
+                            </div>
+                        </div>
+                        
+                        <div class="support-option">
+                            <div class="support-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="support-details">
+                                <h3>Documentation</h3>
+                                <p>Comprehensive guides and tutorials</p>
+                                <button class="btn-secondary" onclick="openDocs()">View Docs</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="support-bot">
+                    <div class="bot-container">
+                        <div class="bot-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="bot-message">
+                            <p>Hi! I'm FutureBot, your AI assistant. I can help you find answers quickly!</p>
+                            <button class="btn-primary" onclick="startBotChat()">
+                                <span>Chat with FutureBot</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-comments"></i>
+                        <span>FutureChat</span>
+                    </div>
+                    <p>Revolutionizing communication for the digital age.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Updates</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FutureChat. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/src/scripts/main.js"></script>
+    <script src="/src/scripts/help.js"></script>
+</body>
+</html>
