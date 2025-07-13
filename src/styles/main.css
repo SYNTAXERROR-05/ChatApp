@@ -104,11 +104,14 @@ body {
   gap: 8px;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-medium);
+  text-decoration: none;
 }
 
 .btn-primary:active {
@@ -124,11 +127,14 @@ body {
   font-weight: 600;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .btn-secondary:hover {
   background: var(--bg-glass);
   transform: translateY(-2px);
+  text-decoration: none;
 }
 
 /* Theme Toggle Styles */

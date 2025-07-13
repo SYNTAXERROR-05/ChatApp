@@ -8,6 +8,7 @@ class HelpManager {
     this.setupFAQ()
     this.setupSearch()
     this.setupSupportActions()
+    this.setupSmoothScrolling()
   }
 
   setupFAQ() {
@@ -15,6 +16,20 @@ class HelpManager {
 
     faqItems.forEach((item) => {
       const question = item.querySelector(".faq-question")
+      const answer = item.querySelector(".faq-answer")
+
+      // Add accessibility attributes
+      question.setAttribute('role', 'button')
+      question.setAttribute('aria-expanded', 'false')
+      question.setAttribute('tabindex', '0')
+      
+      // Add keyboard support
+      question.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          question.click()
+        }
+      })
 
       question.addEventListener("click", () => {
         const isActive = item.classList.contains("active")
@@ -22,11 +37,15 @@ class HelpManager {
         // Close all other FAQ items
         faqItems.forEach((otherItem) => {
           otherItem.classList.remove("active")
+          otherItem.querySelector(".faq-question").setAttribute('aria-expanded', 'false')
         })
 
         // Toggle current item
         if (!isActive) {
           item.classList.add("active")
+          question.setAttribute('aria-expanded', 'true')
+        } else {
+          question.setAttribute('aria-expanded', 'false')
         }
       })
     })
@@ -35,6 +54,11 @@ class HelpManager {
   setupSearch() {
     const searchInput = document.getElementById("helpSearch")
     const searchBtn = document.querySelector(".search-btn")
+
+    if (!searchInput || !searchBtn) {
+      console.error("Search elements not found")
+      return
+    }
 
     const performSearch = () => {
       const query = searchInput.value.trim()
@@ -52,6 +76,11 @@ class HelpManager {
   }
 
   searchHelp(query) {
+    if (!window.showNotification) {
+      console.error("showNotification function not available")
+      return
+    }
+
     window.showNotification(`Searching for: "${query}"`, "info", 3000)
 
     // Simulate search results
@@ -108,7 +137,7 @@ class HelpManager {
       window.showNotification("Opening email client...", "info", 2000)
       // In a real app, this would open the default email client
       setTimeout(() => {
-        window.location.href = "mailto:support@futurechat.com?subject=Support Request"
+        window.location.href = "mailto:support@translatalk.com?subject=Support Request"
       }, 1000)
     }
 
@@ -116,16 +145,39 @@ class HelpManager {
       window.showNotification("Opening documentation...", "info", 2000)
       // In a real app, this would open the documentation site
       setTimeout(() => {
-        window.open("https://docs.futurechat.com", "_blank")
+        window.open("https://docs.translatalk.com", "_blank")
       }, 1000)
     }
 
     window.startBotChat = () => {
-      window.showNotification("Starting chat with FutureBot...", "info", 3000)
+      window.showNotification("Starting chat with TranslaBot...", "info", 3000)
       setTimeout(() => {
-        window.showNotification("FutureBot is ready to help!", "success", 3000)
+        window.showNotification("TranslaBot is ready to help!", "success", 3000)
       }, 2000)
     }
+  }
+
+  setupSmoothScrolling() {
+    // Add smooth scrolling for anchor links
+    const helpLinks = document.querySelectorAll('a[href^="#"]')
+    
+    helpLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault()
+        const targetId = link.getAttribute('href')
+        
+        if (targetId && targetId !== '#') {
+          const targetElement = document.querySelector(targetId)
+          
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            })
+          }
+        }
+      })
+    })
   }
 }
 

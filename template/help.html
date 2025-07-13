@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help Center - FutureChat</title>
+    <title>Help Center - TranslaTalk</title>
     <link rel="stylesheet" href="/src/styles/main.css">
     <link rel="stylesheet" href="/src/styles/animations.css">
     <link rel="stylesheet" href="/src/styles/pages.css">
@@ -16,14 +16,18 @@
             <div class="header-content">
                 <div class="logo-container">
                     <i class="fas fa-comments"></i>
-                    <span>FutureChat</span>
+                    <span>TranslaTalk</span>
                 </div>
                 <nav class="header-nav">
                     <a href="index.html" class="nav-link">Home</a>
                     <a href="about.html" class="nav-link">About</a>
                     <a href="help.html" class="nav-link active">Help</a>
+                    <a href="feedback.html" class="nav-link">Feedback</a>
                     <a href="login.html" class="nav-link">Login</a>
                 </nav>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <div class="theme-toggle" id="themeToggle">
                     <div class="toggle-track">
                         <div class="toggle-thumb">
@@ -39,14 +43,27 @@
         <section class="hero-section">
             <div class="hero-content">
                 <h1 class="hero-title">Help <span class="gradient-text">Center</span></h1>
-                <p class="hero-subtitle">Find answers to your questions and get the most out of FutureChat</p>
+                <p class="hero-subtitle">Find answers to your questions and get the most out of TranslaTalk</p>
                 
                 <!-- Search Bar -->
                 <div class="help-search">
                     <div class="search-container">
                         <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Search for help articles..." id="helpSearch">
-                        <button class="search-btn">Search</button>
+                        <input type="text" placeholder="Search for help articles..." id="helpSearch" aria-label="Search help articles">
+                        <button class="search-btn" aria-label="Search">Search</button>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-animation">
+                <div class="floating-elements">
+                    <div class="floating-icon" style="--delay: 0s">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <div class="floating-icon" style="--delay: 1s">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="floating-icon" style="--delay: 2s">
+                        <i class="fas fa-headset"></i>
                     </div>
                 </div>
             </div>
@@ -92,7 +109,7 @@
                         <i class="fas fa-cog"></i>
                     </div>
                     <h3>Settings</h3>
-                    <p>Customize your FutureChat experience</p>
+                    <p>Customize your TranslaTalk experience</p>
                     <a href="#settings" class="help-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -114,11 +131,11 @@
                     
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span>How do I create a FutureChat account?</span>
+                            <span>How do I create a TranslaTalk account?</span>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Creating a FutureChat account is simple:</p>
+                            <p>Creating a TranslaTalk account is simple:</p>
                             <ol>
                                 <li>Click the "Get Started" button on the homepage</li>
                                 <li>Choose "Sign Up" and fill in your details</li>
@@ -131,11 +148,11 @@
                     
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span>Is FutureChat free to use?</span>
+                            <span>Is TranslaTalk free to use?</span>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Yes! FutureChat offers a comprehensive free tier that includes:</p>
+                            <p>Yes! TranslaTalk offers a comprehensive free tier that includes:</p>
                             <ul>
                                 <li>Unlimited messaging</li>
                                 <li>Voice and video calls</li>
@@ -176,7 +193,7 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Yes! FutureChat includes AI-powered real-time translation:</p>
+                            <p>Yes! TranslaTalk includes AI-powered real-time translation:</p>
                             <ul>
                                 <li>Automatic language detection</li>
                                 <li>Support for 100+ languages</li>
@@ -239,7 +256,7 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Customize your FutureChat experience:</p>
+                            <p>Customize your TranslaTalk experience:</p>
                             <ol>
                                 <li>Click the theme toggle in the top bar</li>
                                 <li>Or go to Settings > Appearance</li>
@@ -318,9 +335,9 @@
                             <i class="fas fa-robot"></i>
                         </div>
                         <div class="bot-message">
-                            <p>Hi! I'm FutureBot, your AI assistant. I can help you find answers quickly!</p>
+                            <p>Hi! I'm TranslaBot, your AI assistant. I can help you find answers quickly!</p>
                             <button class="btn-primary" onclick="startBotChat()">
-                                <span>Chat with FutureBot</span>
+                                <span>Chat with TranslaBot</span>
                                 <i class="fas fa-arrow-right"></i>
                             </button>
                         </div>
@@ -335,28 +352,17 @@
                 <div class="footer-section">
                     <div class="footer-logo">
                         <i class="fas fa-comments"></i>
-                        <span>FutureChat</span>
+                        <span>TranslaTalk</span>
                     </div>
-                    <p>Revolutionizing communication for the digital age.</p>
+                    <p>Breaking language barriers for global communication.</p>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Product</h4>
                     <ul>
                         <li><a href="#">Features</a></li>
-                        <li><a href="#">Security</a></li>
                         <li><a href="#">Pricing</a></li>
                         <li><a href="#">Updates</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
                 
@@ -365,18 +371,16 @@
                     <ul>
                         <li><a href="help.html">Help Center</a></li>
                         <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">Status</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 FutureChat. All rights reserved.</p>
+                <p>&copy; 2024 TranslaTalk. All rights reserved.</p>
                 <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
+                    <a href="privacy.html">Privacy Policy</a>
                     <a href="terms.html">Terms of Service</a>
-                    <a href="#">Cookie Policy</a>
                 </div>
             </div>
         </footer>

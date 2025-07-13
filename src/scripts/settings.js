@@ -12,7 +12,45 @@ class SettingsManager {
     this.setupSliders()
     this.setupSelects()
     this.setupActions()
+    this.setupHeaderThemeToggle()
     this.loadCurrentSettings()
+  }
+
+  setupHeaderThemeToggle() {
+    const themeToggle = document.getElementById("themeToggle")
+    if (themeToggle) {
+      themeToggle.addEventListener("click", () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'auto'
+        let newTheme = 'auto'
+        
+        if (currentTheme === 'auto') {
+          newTheme = 'light'
+        } else if (currentTheme === 'light') {
+          newTheme = 'dark'
+        } else {
+          newTheme = 'auto'
+        }
+        
+        this.settings.theme = newTheme
+        this.saveSettings()
+        
+        // Apply theme
+        if (window.themeManager) {
+          window.themeManager.applyTheme(newTheme)
+        } else {
+          document.documentElement.setAttribute('data-theme', newTheme)
+          localStorage.setItem('theme', newTheme)
+        }
+        
+        // Update theme options in settings
+        const themeOptions = document.querySelectorAll(".theme-option")
+        themeOptions.forEach((option) => {
+          option.classList.toggle("active", option.getAttribute("data-theme") === newTheme)
+        })
+        
+        window.showNotification(`Theme changed to ${newTheme}`, "success", 2000)
+      })
+    }
   }
 
   loadSettings() {
@@ -69,7 +107,15 @@ class SettingsManager {
         // Apply theme
         this.settings.theme = theme
         this.saveSettings()
-        window.themeManager?.applyTheme(theme)
+        
+        // Apply theme through theme manager
+        if (window.themeManager) {
+          window.themeManager.applyTheme(theme)
+        } else {
+          // Fallback: apply theme directly
+          document.documentElement.setAttribute('data-theme', theme)
+          localStorage.setItem('theme', theme)
+        }
 
         window.showNotification(`Theme changed to ${theme}`, "success", 2000)
       })
