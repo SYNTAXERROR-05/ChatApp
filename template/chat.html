@@ -61,7 +61,7 @@
                     <button class="header-btn" title="Status">
                         <i class="fas fa-circle-notch"></i>
                     </button>
-                    <button class="header-btn" title="New Chat">
+                    <button class="header-btn" title="New Chat" onclick="window.location.href='/template/new-chat.html'">
                         <i class="fas fa-message"></i>
                     </button>
                     <button class="header-btn" title="Menu">
@@ -232,10 +232,10 @@
             <!-- Chat Header -->
             <div class="chat-window-header">
                 <div class="contact-info">
-                    <div class="contact-avatar">
+                    <div class="contact-avatar clickable" onclick="window.location.href='/template/friend-profile.html'">
                         <img src="/src/images/tyagi.jpg" alt="Sarah">
                     </div>
-                    <div class="contact-details">
+                    <div class="contact-details clickable" onclick="window.location.href='/template/friend-profile.html'">
                         <h3 class="contact-name">Sarah Johnson</h3>
                         <p class="contact-status">last seen today at 2:28 PM</p>
                     </div>
@@ -341,5 +341,17 @@
     
     <script src="/src/scripts/main.js"></script>
     <script src="/src/scripts/chat.js"></script>
+    <script>
+        // Initialize chat manager after DOM and scripts are loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof TranslaTalkChatManager !== 'undefined') {
+                const chatManager = new TranslaTalkChatManager()
+                window.chatManager = chatManager
+                console.log('Chat manager initialized successfully')
+            } else {
+                console.error('TranslaTalkChatManager is not defined')
+            }
+        })
+    </script>
 </body>
 </html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend Profile - TranslaTalk</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/animations.css">
+    <link rel="stylesheet" href="/src/styles/pages.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <div class="page-header">
+            <button class="back-btn" onclick="window.history.back()" title="Go back">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1>Profile</h1>
+            <!-- <div class="header-actions">
+                <button class="header-btn" title="More Options">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+            </div> -->
+        </div>
+
+        <!-- Profile Content -->
+        <div class="profile-content">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-avatar-large">
+                    <img src="/src/images/tyagi.jpg" alt="Sarah Johnson" id="profileImage">
+                    <div class="online-status"></div>
+                </div>
+                <h2 class="profile-name" id="profileName">Sarah Johnson</h2>
+                <p class="profile-phone" id="profilePhone">+1 (555) 123-4567</p>
+                <p class="profile-status" id="profileStatus">last seen today at 2:28 PM</p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="profile-actions">
+                <button class="action-button primary" onclick="startChat()">
+                    <i class="fas fa-comment"></i>
+                    <span>Message</span>
+                </button>
+                <button class="action-button secondary" onclick="startVoiceCall()">
+                    <i class="fas fa-phone"></i>
+                    <span>Call</span>
+                </button>
+                <button class="action-button secondary" onclick="startVideoCall()">
+                    <i class="fas fa-video"></i>
+                    <span>Video</span>
+                </button>
+                <button class="action-button secondary" onclick="viewProfile()">
+                    <i class="fas fa-user"></i>
+                    <span>View</span>
+                </button>
+            </div>
+
+            <!-- Profile Info -->
+            <div class="profile-info">
+                <div class="info-section">
+                    <h3 class="section-title">About</h3>
+                    <p class="about-text" id="aboutText">
+                        Hey there! I'm using TranslaTalk to connect with friends around the world. 
+                        Love traveling and learning new languages! 🌍✈️
+                    </p>
+                </div>
+
+                <div class="info-section">
+                    <h3 class="section-title">Media, Links and Docs</h3>
+                    <div class="media-grid">
+                        <div class="media-item">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Shared Media">
+                        </div>
+                        <div class="media-item">
+                            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Shared Media">
+                        </div>
+                        <div class="media-item">
+                            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Shared Media">
+                        </div>
+                        <div class="media-item view-all">
+                            <i class="fas fa-plus"></i>
+                            <span>View All</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3 class="section-title">Common Groups</h3>
+                    <div class="groups-list">
+                        <div class="group-item">
+                            <div class="group-avatar">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Group">
+                            </div>
+                            <div class="group-info">
+                                <h4>Design Team</h4>
+                                <p>You, Sarah and 5 others</p>
+                            </div>
+                        </div>
+                        <div class="group-item">
+                            <div class="group-avatar">
+                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Group">
+                            </div>
+                            <div class="group-info">
+                                <h4>Travel Buddies</h4>
+                                <p>You, Sarah and 8 others</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3 class="section-title">Settings</h3>
+                    <div class="settings-list">
+                        <div class="setting-item">
+                            <div class="setting-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="setting-info">
+                                <h4>Notifications</h4>
+                                <p>Custom notifications</p>
+                            </div>
+                            <div class="setting-toggle">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="setting-info">
+                                <h4>Starred Messages</h4>
+                                <p>View starred messages</p>
+                            </div>
+                            <div class="setting-arrow">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="setting-info">
+                                <h4>Search</h4>
+                                <p>Search chat messages</p>
+                            </div>
+                            <div class="setting-arrow">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <div class="setting-info">
+                                <h4>Translation</h4>
+                                <p>Auto-translate messages</p>
+                            </div>
+                            <div class="setting-toggle">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section danger-zone">
+                    <div class="danger-actions">
+                        <button class="danger-btn" onclick="blockUser()">
+                            <i class="fas fa-ban"></i>
+                            <span>Block Sarah</span>
+                        </button>
+                        <button class="danger-btn" onclick="reportUser()">
+                            <i class="fas fa-flag"></i>
+                            <span>Report Sarah</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/src/scripts/main.js"></script>
+    <script>
+        // Profile functionality
+        function startChat() {
+            window.location.href = '/template/chat.html';
+        }
+
+        function startVoiceCall() {
+            // Show loading animation
+            showNotification('Starting voice call...', 'info');
+            setTimeout(() => {
+                showNotification('Voice call feature coming soon!', 'warning');
+            }, 1000);
+        }
+
+        function startVideoCall() {
+            // Show loading animation
+            showNotification('Starting video call...', 'info');
+            setTimeout(() => {
+                showNotification('Video call feature coming soon!', 'warning');
+            }, 1000);
+        }
+
+        function viewProfile() {
+            showNotification('Viewing full profile...', 'info');
+        }
+
+        function blockUser() {
+            showModal('Block User', 'Are you sure you want to block Sarah Johnson?', () => {
+                showNotification('User blocked successfully', 'success');
+            });
+        }
+
+        function reportUser() {
+            showModal('Report User', 'Are you sure you want to report Sarah Johnson?', () => {
+                showNotification('User reported successfully', 'success');
+            });
+        }
+
+        // Enhanced notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <i class="fas fa-${getIconForType(type)}"></i>
+                <span>${message}</span>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        function getIconForType(type) {
+            switch(type) {
+                case 'success': return 'check-circle';
+                case 'warning': return 'exclamation-triangle';
+                case 'error': return 'times-circle';
+                default: return 'info-circle';
+            }
+        }
+
+        function showModal(title, message, onConfirm) {
+            const modal = document.createElement('div');
+            modal.className = 'modal-overlay';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <h3>${title}</h3>
+                    <p>${message}</p>
+                    <div class="modal-actions">
+                        <button class="modal-btn cancel" onclick="closeModal()">Cancel</button>
+                        <button class="modal-btn confirm" onclick="confirmAction()">Confirm</button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            window.closeModal = () => {
+                document.body.removeChild(modal);
+            };
+            
+            window.confirmAction = () => {
+                onConfirm();
+                closeModal();
+            };
+            
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 100);
+        }
+
+        // Add interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click effects to all buttons
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const ripple = document.createElement('span');
+                    ripple.className = 'ripple';
+                    const rect = button.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+                    ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+                    button.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            // Add smooth scrolling for info sections
+            const infoSections = document.querySelectorAll('.info-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.style.opacity = '1';
+                    }
+                });
+            });
+
+            infoSections.forEach(section => {
+                section.style.transform = 'translateY(30px)';
+                section.style.opacity = '0';
+                section.style.transition = 'all 0.5s ease';
+                observer.observe(section);
+            });
+
+            console.log('Friend profile page loaded with enhanced effects');
+        });
+    </script>
+</body>
+</html>

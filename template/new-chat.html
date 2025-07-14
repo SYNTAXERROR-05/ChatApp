@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Chat - TranslaTalk</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/animations.css">
+    <link rel="stylesheet" href="/src/styles/pages.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <div class="page-header">
+            <button class="back-btn" onclick="window.history.back()" title="Go back">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1>New Chat</h1>
+            <!-- <div class="header-actions">
+                <button class="header-btn" title="Search contacts">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="header-btn" title="More options">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+            </div> -->
+        </div>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="search-input-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Search contacts..." class="search-input" id="contactSearch">
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <div class="quick-action-item" onclick="addNewContact()">
+                <div class="quick-action-icon new-contact-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <div class="quick-action-text">
+                    <h3>New Contact</h3>
+                    <p>Add a new contact</p>
+                </div>
+            </div>
+            <div class="quick-action-item" onclick="createNewGroup()">
+                <div class="quick-action-icon new-group-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="quick-action-text">
+                    <h3>New Group</h3>
+                    <p>Create a group chat</p>
+                </div>
+            </div>
+
+            <div class="quick-action-item" onclick="createNewCommunity()">
+                <div class="quick-action-icon new-community-icon">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <div class="quick-action-text">
+                    <h3>New Community</h3>
+                    <p>Create a community</p>
+                </div>
+            </div>
+
+            <div class="quick-action-item" onclick="newBroadcast()">
+                <div class="quick-action-icon new-broadcast-icon">
+                    <i class="fas fa-broadcast-tower"></i>
+                </div>
+                <div class="quick-action-text">
+                    <h3>New Broadcast</h3>
+                    <p>Send message to multiple contacts</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contacts Section -->
+        <div class="contacts-section">
+            <div class="section-header">
+                <h3>Contacts on TranslaTalk</h3>
+                <button class="invite-btn" onclick="inviteContacts()">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Invite Friends</span>
+                </button>
+            </div>
+
+            <div class="contacts-list" id="contactsList">
+                <!-- Frequently Contacted -->
+                <div class="contact-category">
+                    <h4>Frequently Contacted</h4>
+                    <div class="contact-item" onclick="startChat('sarah')">
+                        <div class="contact-avatar">
+                            <img src="/src/images/tyagi.jpg" alt="Sarah Johnson">
+                            <div class="online-status online"></div>
+                        </div>
+                        <div class="contact-info">
+                            <h3>Sarah Johnson</h3>
+                            <p>Hey there! I'm using TranslaTalk</p>
+                        </div>
+                        <div class="contact-actions">
+                            <button class="quick-action-btn" onclick="event.stopPropagation(); startVoiceCall('sarah')" title="Voice call">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button class="quick-action-btn" onclick="event.stopPropagation(); startVideoCall('sarah')" title="Video call">
+                                <i class="fas fa-video"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="contact-item" onclick="startChat('mike')">
+                        <div class="contact-avatar">
+                            <img src="/src/images/amit.jpg" alt="Mike Chen">
+                            <div class="online-status online"></div>
+                        </div>
+                        <div class="contact-info">
+                            <h3>Mike Chen</h3>
+                            <p>Available for chat</p>
+                        </div>
+                        <div class="contact-actions">
+                            <button class="quick-action-btn" onclick="event.stopPropagation(); startVoiceCall('mike')" title="Voice call">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button class="quick-action-btn" onclick="event.stopPropagation(); startVideoCall('mike')" title="Video call">
+                                <i class="fas fa-video"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- All Contacts -->
+                <div class="contact-category">
+                    <h4>All Contacts</h4>
+                    
+                    <div class="contact-item" onclick="startChat('emma')">
+                        <div class="contact-avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Emma Wilson">
+                            <div class="online-status away"></div>
+                        </div>
+                        <div class="contact-info">
+                            <h3>Emma Wilson</h3>
+                            <p>Busy with work</p>
+                        </div>
+                        <div class="contact-actions">
+                            <button class="quick-action-btn" onclick="event.stopPropagation(); startVoiceCall('emma')" title="Voice call">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button class="quick-action-btn" onclick="event.stopPropagation(); startVideoCall('emma')" title="Video call">
+                                <i class="fas fa-video"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="contact-item" onclick="startChat('james')">
+                        <div class="contact-avatar">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="James Rodriguez">
+                            <div class="online-status offline"></div>
+                        </div>
+                        <div class="contact-info">
+                            <h3>James Rodriguez</h3>
+                            <p>last seen 2 hours ago</p>
+                        </div>
+                        <div class="contact-actions">
+                            <button class="quick-action-btn" onclick="event.stopPropagation(); startVoiceCall('james')" title="Voice call">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button class="quick-action-btn" onclick="event.stopPropagation(); startVideoCall('james')" title="Video call">
+                                <i class="fas fa-video"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="contact-item" onclick="startChat('lisa')">
+                        <div class="contact-avatar">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Lisa Park">
+                            <div class="online-status online"></div>
+                        </div>
+                        <div class="contact-info">
+                            <h3>Lisa Park</h3>
+                            <p>Ready to translate! 🌍</p>
+                        </div>
+                        <div class="contact-actions">
+                            <button class="quick-action-btn" onclick="event.stopPropagation(); startVoiceCall('lisa')" title="Voice call">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button class="quick-action-btn" onclick="event.stopPropagation(); startVideoCall('lisa')" title="Video call">
+                                <i class="fas fa-video"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="contact-item" onclick="startChat('david')">
+                        <div class="contact-avatar">
+                            <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="David Thompson">
+                            <div class="online-status away"></div>
+                        </div>
+                        <div class="contact-info">
+                            <h3>David Thompson</h3>
+                            <p>In a meeting</p>
+                        </div>
+                        <div class="contact-actions">
+                            <button class="quick-action-btn" onclick="event.stopPropagation(); startVoiceCall('david')" title="Voice call">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button class="quick-action-btn" onclick="event.stopPropagation(); startVideoCall('david')" title="Video call">
+                                <i class="fas fa-video"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="contact-item" onclick="startChat('ankit')">
+                        <div class="contact-avatar">
+                            <img src="/src/images/ankit.jpg" alt="Ankit Sharma">
+                            <div class="online-status online"></div>
+                        </div>
+                        <div class="contact-info">
+                            <h3>Ankit Sharma</h3>
+                            <p>Learning new languages daily!</p>
+                        </div>
+                        <div class="contact-actions">
+                            <button class="quick-action-btn" onclick="event.stopPropagation(); startVoiceCall('ankit')" title="Voice call">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button class="quick-action-btn" onclick="event.stopPropagation(); startVideoCall('ankit')" title="Video call">
+                                <i class="fas fa-video"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Contact Button -->
+       <!-- <div class="add-contact-section">
+            <button class="add-contact-btn" onclick="addNewContact()">
+                <i class="fas fa-plus"></i>
+                <span>Add New Contact</span>
+            </button>
+        </div> -->
+    </div>
+
+    <script src="/src/scripts/main.js"></script>
+    <script>
+        // New Chat functionality
+        function startChat(contactId) {
+            // Store selected contact and redirect to chat
+            localStorage.setItem('selectedContact', contactId);
+            window.location.href = '/template/chat.html';
+        }
+
+        function createNewGroup() {
+            showNotification('Group creation feature coming soon!', 'info');
+        }
+
+        function createNewCommunity() {
+            showNotification('Community creation feature coming soon!', 'info');
+        }
+
+        function newBroadcast() {
+            showNotification('Broadcast feature coming soon!', 'info');
+        }
+
+        function inviteContacts() {
+            showNotification('Invite friends feature coming soon!', 'info');
+        }
+
+        function startVoiceCall(contactId) {
+            showNotification(`Starting voice call with ${contactId}...`, 'info');
+        }
+
+        function startVideoCall(contactId) {
+            showNotification(`Starting video call with ${contactId}...`, 'info');
+        }
+
+        function addNewContact() {
+            const phoneNumber = prompt('Enter phone number or username:');
+            if (phoneNumber) {
+                showNotification(`Contact request sent to ${phoneNumber}`, 'success');
+            }
+        }
+
+        // Enhanced notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <i class="fas fa-${getIconForType(type)}"></i>
+                <span>${message}</span>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        function getIconForType(type) {
+            switch(type) {
+                case 'success': return 'check-circle';
+                case 'warning': return 'exclamation-triangle';
+                case 'error': return 'times-circle';
+                default: return 'info-circle';
+            }
+        }
+
+        // Search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('contactSearch');
+            const contactsList = document.getElementById('contactsList');
+
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const contacts = contactsList.querySelectorAll('.contact-item');
+
+                contacts.forEach(contact => {
+                    const contactName = contact.querySelector('.contact-info h3').textContent.toLowerCase();
+                    const contactStatus = contact.querySelector('.contact-info p').textContent.toLowerCase();
+                    
+                    if (contactName.includes(searchTerm) || contactStatus.includes(searchTerm)) {
+                        contact.style.display = 'flex';
+                    } else {
+                        contact.style.display = 'none';
+                    }
+                });
+            });
+
+            // Add ripple effect to all buttons
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const ripple = document.createElement('span');
+                    ripple.className = 'ripple';
+                    const rect = button.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+                    ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+                    button.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            // Add stagger animation to contact items
+            const contactItems = document.querySelectorAll('.contact-item');
+            contactItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    item.style.transition = 'all 0.5s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+
+            // Add hover sound effect (optional)
+            const quickActions = document.querySelectorAll('.quick-action-item');
+            quickActions.forEach(action => {
+                action.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+                action.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            console.log('New Chat page loaded with enhanced effects');
+        });
+    </script>
+</body>
+</html>

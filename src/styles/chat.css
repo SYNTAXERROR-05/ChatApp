@@ -1379,3 +1379,13 @@
 .messages-area::-webkit-scrollbar-thumb:hover {
   background: var(--secondary-gradient);
 }
+
+/* Clickable elements */
+.clickable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clickable:hover {
+  opacity: 0.8;
+}

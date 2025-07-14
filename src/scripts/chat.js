@@ -730,52 +730,69 @@ class TranslaTalkChatManager {
   }
 
   setupHeaderActions() {
+    console.log('Setting up header actions...');
     const communitiesBtn = document.querySelector('.header-btn[title="Communities"]');
     const statusBtn = document.querySelector('.header-btn[title="Status"]');
     const newChatBtn = document.querySelector('.header-btn[title="New Chat"]');
     const menuBtn = document.querySelector('.header-btn[title="Menu"]');
     
+    console.log('Header buttons found:', { communitiesBtn, statusBtn, newChatBtn, menuBtn });
+    
     if (communitiesBtn) {
       communitiesBtn.addEventListener('click', () => {
+        console.log('Communities button clicked');
         this.showNotification('Communities feature coming soon!', 'info');
       });
     }
     
     if (statusBtn) {
       statusBtn.addEventListener('click', () => {
+        console.log('Status button clicked');
         this.showNotification('Status updates coming soon!', 'info');
       });
     }
     
     if (newChatBtn) {
       newChatBtn.addEventListener('click', () => {
+        console.log('New chat button clicked');
         this.showNewChatDialog();
       });
     }
     
     if (menuBtn) {
       menuBtn.addEventListener('click', () => {
+        console.log('Menu button clicked');
         this.showMainMenu();
       });
     }
   }
 
   setupSearchFunctionality() {
+    console.log('Setting up search functionality...');
     const searchInput = document.querySelector('.search-input');
+    
+    console.log('Search input found:', searchInput);
     
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {
         const searchTerm = e.target.value.toLowerCase();
+        console.log('Search term:', searchTerm);
         this.filterChats(searchTerm);
       });
+    } else {
+      console.error('Search input not found');
     }
   }
 
   setupFilterTabs() {
+    console.log('Setting up filter tabs...');
     const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    console.log('Filter buttons found:', filterButtons.length);
     
     filterButtons.forEach(btn => {
       btn.addEventListener('click', () => {
+        console.log('Filter button clicked:', btn.textContent);
         // Remove active class from all buttons
         filterButtons.forEach(b => b.classList.remove('active'));
         // Add active class to clicked button
@@ -806,17 +823,20 @@ class TranslaTalkChatManager {
   }
 
   setupProfileDropdown() {
+    console.log('Setting up profile dropdown...');
     const profileAvatar = document.getElementById('profileAvatar');
     const profileDropdown = document.getElementById('profileDropdown');
     
-    console.log('Setting up profile dropdown:', { profileAvatar, profileDropdown });
+    console.log('Profile elements found:', { profileAvatar, profileDropdown });
     
     if (profileAvatar && profileDropdown) {
+      console.log('Adding click listener to profile avatar');
       // Toggle dropdown on avatar click
       profileAvatar.addEventListener('click', (e) => {
         e.stopPropagation();
         console.log('Profile avatar clicked');
         profileDropdown.classList.toggle('show');
+        console.log('Dropdown classes:', profileDropdown.classList.toString());
       });
       
       // Close dropdown when clicking outside
@@ -828,6 +848,7 @@ class TranslaTalkChatManager {
       
       // Handle dropdown item clicks
       const dropdownItems = profileDropdown.querySelectorAll('.dropdown-item');
+      console.log('Found dropdown items:', dropdownItems.length);
       dropdownItems.forEach(item => {
         item.addEventListener('click', (e) => {
           e.stopPropagation();
@@ -838,7 +859,7 @@ class TranslaTalkChatManager {
         });
       });
     } else {
-      console.error('Profile dropdown elements not found');
+      console.error('Profile dropdown elements not found:', { profileAvatar, profileDropdown });
     }
   }
 
