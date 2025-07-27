@@ -5,37 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback - TranslaTalk</title>
-    <link rel="stylesheet" href="/src/styles/main.css">
-    <link rel="stylesheet" href="/src/styles/animations.css">
-    <link rel="stylesheet" href="/src/styles/pages.css">
+    <link rel="stylesheet" href="/src/styles/feedback.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="/src/scripts/feedback.js" defer></script>
 </head>
 <body>
     <div class="page-container">
         <!-- Navigation Header -->
         <header class="page-header">
             <div class="header-content">
-                <div class="logo-container">
-                    <i class="fas fa-comments"></i>
-                    <span>TranslaTalk</span>
+                <div class="header-left">
+                    <div class="logo-container">
+                        <i class="fas fa-comments"></i>
+                        <span>TranslaTalk</span>
+                    </div>
                 </div>
-                <nav class="header-nav">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href="help.html" class="nav-link">Help</a>
-                    <a href="feedback.html" class="nav-link active">Feedback</a>
-                    <a href="login.html" class="nav-link">Login</a>
-                </nav>
-                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="theme-toggle" id="themeToggle">
-                    <div class="toggle-track">
-                        <div class="toggle-thumb">
-                            <i class="fas fa-sun sun-icon"></i>
-                            <i class="fas fa-moon moon-icon"></i>
+                
+                <div class="header-center">
+                    <nav class="header-nav">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="about.html" class="nav-link">About</a>
+                        <a href="help.html" class="nav-link">Help</a>
+                        <a href="feedback.html" class="nav-link active">Feedback</a>
+                        <a href="login.html" class="nav-link">Login</a>
+                    </nav>
+                </div>
+                
+                <div class="header-right">
+                    <div class="theme-toggle" id="themeToggle">
+                        <div class="toggle-track">
+                            <div class="toggle-thumb">
+                                <i class="fas fa-sun sun-icon"></i>
+                                <i class="fas fa-moon moon-icon"></i>
+                            </div>
                         </div>
                     </div>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
             </div>
         </header>
@@ -48,13 +55,13 @@
             </div>
             <div class="hero-animation">
                 <div class="floating-elements">
-                    <div class="floating-icon" style="--delay: 0s">
+                    <div class="floating-icon floating-icon-1">
                         <i class="fas fa-comment-dots"></i>
                     </div>
-                    <div class="floating-icon" style="--delay: 1s">
+                    <div class="floating-icon floating-icon-2">
                         <i class="fas fa-star"></i>
                     </div>
-                    <div class="floating-icon" style="--delay: 2s">
+                    <div class="floating-icon floating-icon-3">
                         <i class="fas fa-heart"></i>
                     </div>
                 </div>
@@ -113,21 +120,11 @@
         <footer class="page-footer">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class="logo-container">
+                    <div class="footer-logo">
                         <i class="fas fa-comments"></i>
                         <span>TranslaTalk</span>
                     </div>
-                    <p>Breaking language barriers with real-time translation and seamless communication.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="help.html">Help</a></li>
-                        <li><a href="feedback.html">Feedback</a></li>
-                    </ul>
+                    <p>Breaking language barriers for global communication.</p>
                 </div>
                 
                 <div class="footer-section">
@@ -161,8 +158,7 @@
         <div id="toast" class="toast">✅ Thanks for your feedback!</div>
     </div>
 
-    <script src="/src/scripts/main.js"></script>
-    <script>
+    <!-- <script>
         // Star rating functionality
         const stars = document.querySelectorAll(".rating i");
         stars.forEach((star, index) => {
@@ -192,17 +188,6 @@
             e.target.reset();
             stars.forEach(star => star.classList.remove("fa-solid"));
         }
-
-        // Mobile menu toggle
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const headerNav = document.querySelector('.header-nav');
-        
-        if (mobileMenuToggle) {
-            mobileMenuToggle.addEventListener('click', () => {
-                headerNav.classList.toggle('active');
-                mobileMenuToggle.classList.toggle('active');
-            });
-        }
-    </script>
+    </script> -->
 </body>
 </html>

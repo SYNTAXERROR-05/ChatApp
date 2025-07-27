@@ -12,15 +12,12 @@
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .page-header .back-btn {
@@ -69,7 +66,7 @@
   padding: 0 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   position: relative;
 }
 
@@ -77,6 +74,7 @@
   flex: 1;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
 }
 
 .header-center {
@@ -442,16 +440,19 @@
 .floating-icon:nth-child(1) {
   top: 20%;
   left: 10%;
+  animation-delay: 0s;
 }
 
 .floating-icon:nth-child(2) {
   top: 60%;
   right: 15%;
+  animation-delay: 1s;
 }
 
 .floating-icon:nth-child(3) {
   bottom: 20%;
   left: 20%;
+  animation-delay: 2s;
 }
 
 .hero-title {

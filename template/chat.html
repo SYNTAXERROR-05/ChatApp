@@ -17,7 +17,7 @@
             <div class="chat-list-header">
                 <div class="profile-section">
                     <div class="profile-avatar" id="profileAvatar">
-                        <img src="/src/images/dev.png" alt="Profile">
+                        <a href="profile.html" class="profile-avatar"><img src="/src/images/dev.png" alt=""></a>
                         <!-- Profile Dropdown -->
                         <div class="profile-dropdown" id="profileDropdown">
                             <div class="profile-dropdown-header">
@@ -50,9 +50,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="app-title">
-                        <h2>TranslaTalk</h2>
-                    </div> -->
                 </div>
                 <div class="header-actions">
                     <button class="header-btn" title="Communities">
@@ -64,9 +61,50 @@
                     <button class="header-btn" title="New Chat" onclick="window.location.href='/template/new-chat.html'">
                         <i class="fas fa-message"></i>
                     </button>
-                    <button class="header-btn" title="Menu">
-                        <i class="fas fa-ellipsis-v"></i>
-                    </button>
+                    <div class="menu-btn-container">
+                        <button class="header-btn" title="Menu" id="menuBtn">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <!-- Menu Dropdown -->
+                        <div class="menu-dropdown" id="menuDropdown">
+                            <div class="menu-dropdown-content">
+                                <button class="menu-dropdown-item" data-action="settings">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Settings</span>
+                                </button>
+                                <button class="menu-dropdown-item" data-action="profile">
+                                    <i class="fas fa-user"></i>
+                                    <span>Profile</span>
+                                </button>
+                                <button class="menu-dropdown-item" data-action="starred">
+                                    <i class="fas fa-star"></i>
+                                    <span>Starred Messages</span>
+                                </button>
+                                <button class="menu-dropdown-item" data-action="archived">
+                                    <i class="fas fa-archive"></i>
+                                    <span>Archived Chats</span>
+                                </button>
+                                <hr class="menu-dropdown-divider">
+                                <button class="menu-dropdown-item" data-action="help">
+                                    <i class="fas fa-question-circle"></i>
+                                    <span>Help & Support</span>
+                                </button>
+                                <button class="menu-dropdown-item" data-action="feedback">
+                                    <i class="fas fa-comment-alt"></i>
+                                    <span>Send Feedback</span>
+                                </button>
+                                <button class="menu-dropdown-item" data-action="about">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>About TranslaTalk</span>
+                                </button>
+                                <hr class="menu-dropdown-divider">
+                                <button class="menu-dropdown-item" data-action="logout">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Logout</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Theme Toggle -->
                     <div class="theme-toggle" id="themeToggle">
                         <div class="toggle-track">
@@ -99,11 +137,11 @@
             <div class="chat-list">
                 <div class="chat-item active">
                     <div class="chat-avatar">
-                        <img src="/src/images/tyagi.jpg" alt="Sarah">
+                        <img src="/src/images/ankit.jpg" alt="Virat Kohli">
                     </div>
                     <div class="chat-content">
                         <div class="chat-header">
-                            <h3 class="chat-name">Sarah Johnson</h3>
+                            <h3 class="chat-name">Virat Kohli</h3>
                             <span class="chat-time">2:30 PM</span>
                         </div>
                         <div class="chat-message">
@@ -118,11 +156,11 @@
 
                 <div class="chat-item">
                     <div class="chat-avatar">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Mike">
+                        <img src="/src/images/amit.jpg" alt="Arjun">
                     </div>
                     <div class="chat-content">
                         <div class="chat-header">
-                            <h3 class="chat-name">Mike Chen</h3>
+                            <h3 class="chat-name">Arjun Kapoor</h3>
                             <span class="chat-time">1:15 PM</span>
                         </div>
                         <div class="chat-message">
@@ -146,7 +184,7 @@
                         <div class="chat-message">
                             <div class="message-preview">
                                 <i class="fas fa-user message-sender"></i>
-                                <span>Alex: New mockups are ready for review</span>
+                                <span>Shakti Kapoor: New mockups are ready for review</span>
                             </div>
                             <div class="unread-count">3</div>
                         </div>
@@ -155,11 +193,11 @@
 
                 <div class="chat-item">
                     <div class="chat-avatar">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Emma">
+                        <img src="/src/images/ankit.jpg" alt="Aditya">
                     </div>
                     <div class="chat-content">
                         <div class="chat-header">
-                            <h3 class="chat-name">Emma Wilson</h3>
+                            <h3 class="chat-name">Shakti Kapoor</h3>
                             <span class="chat-time">Yesterday</span>
                         </div>
                         <div class="chat-message">
@@ -173,11 +211,11 @@
 
                 <div class="chat-item">
                     <div class="chat-avatar">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="James">
+                        <img src="/src/images/ankit.jpg" alt="Vikram">
                     </div>
                     <div class="chat-content">
                         <div class="chat-header">
-                            <h3 class="chat-name">James Rodriguez</h3>
+                            <h3 class="chat-name">Vikram Batra</h3>
                             <span class="chat-time">Tuesday</span>
                         </div>
                         <div class="chat-message">
@@ -191,11 +229,11 @@
 
                 <div class="chat-item">
                     <div class="chat-avatar">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Lisa">
+                        <img src="/src/images/amit.jpg" alt="Rohit">
                     </div>
                     <div class="chat-content">
                         <div class="chat-header">
-                            <h3 class="chat-name">Lisa Park</h3>
+                            <h3 class="chat-name">Rohit Sharma</h3>
                             <span class="chat-time">Monday</span>
                         </div>
                         <div class="chat-message">
@@ -209,11 +247,11 @@
 
                 <div class="chat-item">
                     <div class="chat-avatar">
-                        <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="David">
+                        <img src="/src/images/amit.jpg" alt="Rahul">
                     </div>
                     <div class="chat-content">
                         <div class="chat-header">
-                            <h3 class="chat-name">David Thompson</h3>
+                            <h3 class="chat-name">Rahul Dravid</h3>
                             <span class="chat-time">Sunday</span>
                         </div>
                         <div class="chat-message">
@@ -233,10 +271,10 @@
             <div class="chat-window-header">
                 <div class="contact-info">
                     <div class="contact-avatar clickable" onclick="window.location.href='/template/friend-profile.html'">
-                        <img src="/src/images/tyagi.jpg" alt="Sarah">
+                        <img src="/src/images/ankit.jpg" alt="a">
                     </div>
                     <div class="contact-details clickable" onclick="window.location.href='/template/friend-profile.html'">
-                        <h3 class="contact-name">Sarah Johnson</h3>
+                        <h3 class="contact-name">Virat Kohli</h3>
                         <p class="contact-status">last seen today at 2:28 PM</p>
                     </div>
                 </div>
@@ -266,7 +304,7 @@
                 <!-- Messages -->
                 <div class="message received">
                     <div class="message-bubble">
-                        <p class="message-text">Hey! How are you doing? 😊</p>
+                        <p class="message-text">Kya india team ki jeet hogi? 😊</p>
                         <div class="message-meta">
                             <span class="message-time">2:30 PM</span>
                         </div>
@@ -275,7 +313,7 @@
 
                 <div class="message sent">
                     <div class="message-bubble">
-                        <p class="message-text">I'm doing great! Just working on some new designs. How about you?</p>
+                        <p class="message-text">nhi buddy india team to gyo</p>
                         <div class="message-meta">
                             <span class="message-time">2:32 PM</span>
                             <i class="fas fa-check-double message-status read"></i>
@@ -285,7 +323,7 @@
 
                 <div class="message received">
                     <div class="message-bubble">
-                        <p class="message-text">That sounds exciting! I'd love to see them when you're ready to share.</p>
+                        <p class="message-text">ha Ben Stokes kaisa khel rhe hai</p>
                         <div class="message-meta">
                             <span class="message-time">2:35 PM</span>
                         </div>
@@ -298,7 +336,7 @@
 
                 <div class="message sent">
                     <div class="message-bubble">
-                        <p class="message-text">Sure! I'll send them over once I finish the final touches.</p>
+                        <p class="message-text">yha pr thala hi jaan bacha skte hai</p>
                         <div class="message-meta">
                             <span class="message-time">2:38 PM</span>
                             <i class="fas fa-check-double message-status read"></i>

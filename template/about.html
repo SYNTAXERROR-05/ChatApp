@@ -4,37 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - TranslaTalk</title>
-    <link rel="stylesheet" href="/src/styles/main.css">
-    <link rel="stylesheet" href="/src/styles/animations.css">
-    <link rel="stylesheet" href="/src/styles/pages.css">
+    <link rel="stylesheet" href="/src/styles/about.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="/src/scripts/about.js" defer></script>
 </head>
 <body>
     <div class="page-container">
         <!-- Navigation Header -->
         <header class="page-header">
             <div class="header-content">
-                <div class="logo-container">
-                    <i class="fas fa-comments"></i>
-                    <span>TranslaTalk</span>
+                <div class="header-left">
+                    <div class="logo-container">
+                        <i class="fas fa-comments"></i>
+                        <span>TranslaTalk</span>
+                    </div>
                 </div>
-                <nav class="header-nav">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="about.html" class="nav-link active">About</a>
-                    <a href="help.html" class="nav-link">Help</a>
-                    <a href="feedback.html" class="nav-link">Feedback</a>
-                    <a href="login.html" class="nav-link">Login</a>
-                </nav>
-                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="theme-toggle" id="themeToggle">
-                    <div class="toggle-track">
-                        <div class="toggle-thumb">
-                            <i class="fas fa-sun sun-icon"></i>
-                            <i class="fas fa-moon moon-icon"></i>
+                
+                <div class="header-center">
+                    <nav class="header-nav">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="about.html" class="nav-link active">About</a>
+                        <a href="help.html" class="nav-link">Help</a>
+                        <a href="feedback.html" class="nav-link">Feedback</a>
+                        <a href="login.html" class="nav-link">Login</a>
+                    </nav>
+                </div>
+                
+                <div class="header-right">
+                    <div class="theme-toggle" id="themeToggle">
+                        <div class="toggle-track">
+                            <div class="toggle-thumb">
+                                <i class="fas fa-sun sun-icon"></i>
+                                <i class="fas fa-moon moon-icon"></i>
+                            </div>
                         </div>
                     </div>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
             </div>
         </header>
@@ -47,13 +54,13 @@
             </div>
             <div class="hero-animation">
                 <div class="floating-elements">
-                    <div class="floating-icon" style="--delay: 0s">
+                    <div class="floating-icon">
                         <i class="fas fa-language"></i>
                     </div>
-                    <div class="floating-icon" style="--delay: 1s">
+                    <div class="floating-icon">
                         <i class="fas fa-globe"></i>
                     </div>
-                    <div class="floating-icon" style="--delay: 2s">
+                    <div class="floating-icon">
                         <i class="fas fa-comments"></i>
                     </div>
                 </div>
@@ -68,7 +75,7 @@
             </div>
             
             <div class="timeline">
-                <div class="timeline-item" data-year="2020">
+                <div class="timeline-item" data-year="2022">
                     <div class="timeline-content">
                         <div class="timeline-icon">
                             <i class="fas fa-lightbulb"></i>
@@ -78,7 +85,7 @@
                     </div>
                 </div>
                 
-                <div class="timeline-item" data-year="2021">
+                <div class="timeline-item" data-year="2023">
                     <div class="timeline-content">
                         <div class="timeline-icon">
                             <i class="fas fa-code"></i>
@@ -88,7 +95,7 @@
                     </div>
                 </div>
                 
-                <div class="timeline-item" data-year="2022">
+                <div class="timeline-item" data-year="2024">
                     <div class="timeline-content">
                         <div class="timeline-icon">
                             <i class="fas fa-users"></i>
@@ -98,7 +105,7 @@
                     </div>
                 </div>
                 
-                <div class="timeline-item" data-year="2023">
+                <div class="timeline-item" data-year="2025">
                     <div class="timeline-content">
                         <div class="timeline-icon">
                             <i class="fas fa-rocket"></i>
@@ -108,7 +115,7 @@
                     </div>
                 </div>
                 
-                <div class="timeline-item" data-year="2024">
+                <!-- <div class="timeline-item" data-year="2026">
                     <div class="timeline-content">
                         <div class="timeline-icon">
                             <i class="fas fa-trophy"></i>
@@ -116,7 +123,7 @@
                         <h3>Recognition</h3>
                         <p>Awarded "Best Translation App" and reached over 1 million active users worldwide, establishing TranslaTalk as a leader in cross-language communication.</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
 
@@ -188,7 +195,7 @@
             <div class="team-grid">
                 <div class="team-member">
                     <div class="member-avatar">
-                        <img src="/placeholder.svg?height=120&width=120" alt="Sarah Chen">
+                        <img src="/src/images/tyagi.jpg" alt="Deepanshu Tyagi">
                         <div class="member-overlay">
                             <div class="social-links">
                                 <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -197,14 +204,14 @@
                             </div>
                         </div>
                     </div>
-                    <h3>Sarah Chen</h3>
-                    <p class="member-role">CEO & Founder</p>
-                    <p class="member-bio">Visionary leader with 15+ years in tech innovation and cross-cultural communication solutions.</p>
+                    <h3>Deepanshu Tyagi</h3>
+                    <p class="member-role">Advisor & Frontend Developer</p>
+                    <p class="member-bio">Expert in modern web technologies and user interface design, creating intuitive and beautiful user experiences.</p>
                 </div>
                 
                 <div class="team-member">
                     <div class="member-avatar">
-                        <img src="/placeholder.svg?height=120&width=120" alt="Marcus Rodriguez">
+                        <img src="/src/images/amit.jpg" alt="Amit Saini">
                         <div class="member-overlay">
                             <div class="social-links">
                                 <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -213,30 +220,14 @@
                             </div>
                         </div>
                     </div>
-                    <h3>Marcus Rodriguez</h3>
-                    <p class="member-role">CTO</p>
-                    <p class="member-bio">Full-stack architect specializing in real-time translation systems and AI-powered language processing.</p>
+                    <h3>Amit Saini</h3>
+                    <p class="member-role">Co-Founder & Backend Developer</p>
+                    <p class="member-bio">Backend architecture specialist with expertise in scalable systems and AI integration for real-time translation services.</p>
                 </div>
                 
                 <div class="team-member">
                     <div class="member-avatar">
-                        <img src="/placeholder.svg?height=120&width=120" alt="Emily Watson">
-                        <div class="member-overlay">
-                            <div class="social-links">
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                                <a href="#"><i class="fab fa-dribbble"></i></a>
-                                <a href="#"><i class="fab fa-behance"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>Emily Watson</h3>
-                    <p class="member-role">Head of Design</p>
-                    <p class="member-bio">Award-winning designer creating intuitive interfaces that transcend language barriers.</p>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-avatar">
-                        <img src="/placeholder.svg?height=120&width=120" alt="David Kim">
+                        <img src="/src/images/ankit.jpg" alt="Ankit Kumar">
                         <div class="member-overlay">
                             <div class="social-links">
                                 <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -245,9 +236,25 @@
                             </div>
                         </div>
                     </div>
-                    <h3>David Kim</h3>
+                    <h3>Ankit Kumar</h3>
+                    <p class="member-role">Database Administrator</p>
+                    <p class="member-bio">Database optimization expert ensuring efficient data management and lightning-fast message delivery across all languages.</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <img src="/src/images/dev.png" alt="Dev Arya">
+                        <div class="member-overlay">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Dev Arya</h3>
                     <p class="member-role">Security Engineer</p>
-                    <p class="member-bio">Cybersecurity expert ensuring your data remains private and protected.</p>
+                    <p class="member-bio">Specializes in cybersecurity and encryption protocols, ensuring TranslaTalk maintains the highest security standards for user privacy.</p>
                 </div>
             </div>
         </section>
@@ -309,6 +316,5 @@
         </footer>
     </div>
 
-    <script src="/src/scripts/main.js"></script>
 </body>
 </html>

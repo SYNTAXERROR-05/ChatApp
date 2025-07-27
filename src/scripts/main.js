@@ -178,10 +178,10 @@ class AnimationManager {
   }
 
   setupHoverEffects() {
-    // Add ripple effect to buttons
-    document.querySelectorAll(".btn-primary, .btn-secondary").forEach((button) => {
-      button.addEventListener("click", this.createRipple)
-    })
+    // Ripple effect disabled to prevent button size issues
+    // document.querySelectorAll(".btn-primary, .btn-secondary").forEach((button) => {
+    //   button.addEventListener("click", this.createRipple)
+    // })
   }
 
   createRipple(event) {
