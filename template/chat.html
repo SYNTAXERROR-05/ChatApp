@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,24 +9,26 @@
     <link rel="stylesheet" href="/src/styles/animations.css">
     <link rel="stylesheet" href="/src/styles/chat.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="/src/scripts/chat.js" defer></script>
 </head>
+
 <body>
-    <div class="whatsapp-container">
+    <div class="chat-container">
         <!-- Chat List Panel -->
         <div class="chat-list-panel">
             <!-- Header -->
             <div class="chat-list-header">
                 <div class="profile-section">
                     <div class="profile-avatar" id="profileAvatar">
-                        <a href="profile.html" class="profile-avatar"><img src="/src/images/dev.png" alt=""></a>
+                        <img src="/src/images/dev.png" alt="">
                         <!-- Profile Dropdown -->
                         <div class="profile-dropdown" id="profileDropdown">
                             <div class="profile-dropdown-header">
                                 <div class="profile-info">
                                     <img src="/src/images/dev.png" alt="Profile">
                                     <div class="profile-details">
-                                        <h4>Your Name</h4>
-                                        <p>@username</p>
+                                        <h4>Sachin Tendulkar</h4>
+                                        <p>@sachin_tendulkar</p>
                                     </div>
                                 </div>
                             </div>
@@ -38,10 +41,10 @@
                                     <i class="fas fa-cog"></i>
                                     <span>Settings</span>
                                 </button>
-                                <button class="dropdown-item" data-action="help">
+                                <!-- <button class="dropdown-item" data-action="help">
                                     <i class="fas fa-question-circle"></i>
                                     <span>Help</span>
-                                </button>
+                                </button> -->
                                 <hr class="dropdown-divider">
                                 <button class="dropdown-item" data-action="logout">
                                     <i class="fas fa-sign-out-alt"></i>
@@ -52,13 +55,62 @@
                     </div>
                 </div>
                 <div class="header-actions">
-                    <button class="header-btn" title="Communities">
-                        <i class="fas fa-users"></i>
-                    </button>
-                    <button class="header-btn" title="Status">
-                        <i class="fas fa-circle-notch"></i>
-                    </button>
-                    <button class="header-btn" title="New Chat" onclick="window.location.href='/template/new-chat.html'">
+                    <div class="communities-btn-container">
+                        <button class="header-btn" title="Communities" id="communitiesBtn">
+                            <i class="fas fa-users"></i>
+                        </button>
+                        <!-- Communities Popup -->
+                        <div class="new-feature-popup left-side" id="communitiesPopup">
+                            <div class="popup-content">
+                                <div class="popup-header">
+                                    <h3>Communities</h3>
+                                    <button class="popup-close" title="Close popup" onclick="closeCommunititesPopup()">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="popup-body">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-users gradient-icon"></i>
+                                    </div>
+                                    <h4>Communities Feature</h4>
+                                    <p>Join and create communities to connect with like-minded people.</p>
+                                    <p class="feature-note">This feature is currently under development and will be available soon!</p>
+                                </div>
+                                <div class="popup-footer">
+                                    <button class="btn-primary" onclick="closeCommunititesPopup()">Got it!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-btn-container">
+                        <button class="header-btn" title="Status" id="statusBtn">
+                            <i class="fas fa-circle-notch"></i>
+                        </button>
+                        <!-- Status Popup -->
+                        <div class="new-feature-popup left-side" id="statusPopup">
+                            <div class="popup-content">
+                                <div class="popup-header">
+                                    <h3>Status Updates</h3>
+                                    <button class="popup-close" title="Close popup" onclick="closeStatusPopup()">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="popup-body">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-circle-notch gradient-icon"></i>
+                                    </div>
+                                    <h4>Status Feature</h4>
+                                    <p>Share your moments and see what your contacts are up to.</p>
+                                    <p class="feature-note">This feature is currently under development and will be available soon!</p>
+                                </div>
+                                <div class="popup-footer">
+                                    <button class="btn-primary" onclick="closeStatusPopup()">Got it!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="header-btn" title="New Chat"
+                        onclick="window.location.href='/template/new-chat.html'">
                         <i class="fas fa-message"></i>
                     </button>
                     <div class="menu-btn-container">
@@ -68,14 +120,14 @@
                         <!-- Menu Dropdown -->
                         <div class="menu-dropdown" id="menuDropdown">
                             <div class="menu-dropdown-content">
-                                <button class="menu-dropdown-item" data-action="settings">
+                                <!-- <button class="menu-dropdown-item" data-action="settings">
                                     <i class="fas fa-cog"></i>
                                     <span>Settings</span>
                                 </button>
                                 <button class="menu-dropdown-item" data-action="profile">
                                     <i class="fas fa-user"></i>
                                     <span>Profile</span>
-                                </button>
+                                </button> -->
                                 <button class="menu-dropdown-item" data-action="starred">
                                     <i class="fas fa-star"></i>
                                     <span>Starred Messages</span>
@@ -85,15 +137,18 @@
                                     <span>Archived Chats</span>
                                 </button>
                                 <hr class="menu-dropdown-divider">
-                                <button class="menu-dropdown-item" data-action="help">
+                                <button class="menu-dropdown-item" data-action="help"
+                                onclick="window.location.href='/template/help.html'">
                                     <i class="fas fa-question-circle"></i>
                                     <span>Help & Support</span>
                                 </button>
-                                <button class="menu-dropdown-item" data-action="feedback">
+                                <button class="menu-dropdown-item" data-action="feedback"
+                                onclick="window.location.href='/template/feedback.html'">
                                     <i class="fas fa-comment-alt"></i>
                                     <span>Send Feedback</span>
                                 </button>
-                                <button class="menu-dropdown-item" data-action="about">
+                                <button class="menu-dropdown-item" data-action="about"
+                                onclick="window.location.href='/template/about.html'">
                                     <i class="fas fa-info-circle"></i>
                                     <span>About TranslaTalk</span>
                                 </button>
@@ -156,7 +211,7 @@
 
                 <div class="chat-item">
                     <div class="chat-avatar">
-                        <img src="/src/images/amit.jpg" alt="Arjun">
+                        <img src="/src/images/amit.jpg" alt="Arjun Kapoor">
                     </div>
                     <div class="chat-content">
                         <div class="chat-header">
@@ -174,7 +229,8 @@
 
                 <div class="chat-item">
                     <div class="chat-avatar">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Team">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                            alt="Team">
                     </div>
                     <div class="chat-content">
                         <div class="chat-header">
@@ -270,10 +326,12 @@
             <!-- Chat Header -->
             <div class="chat-window-header">
                 <div class="contact-info">
-                    <div class="contact-avatar clickable" onclick="window.location.href='/template/friend-profile.html'">
+                    <div class="contact-avatar clickable"
+                        onclick="window.location.href='/template/friend-profile.html'">
                         <img src="/src/images/ankit.jpg" alt="a">
                     </div>
-                    <div class="contact-details clickable" onclick="window.location.href='/template/friend-profile.html'">
+                    <div class="contact-details clickable"
+                        onclick="window.location.href='/template/friend-profile.html'">
                         <h3 class="contact-name">Virat Kohli</h3>
                         <p class="contact-status">last seen today at 2:28 PM</p>
                     </div>
@@ -288,9 +346,9 @@
                     <button class="action-btn" title="Video Call">
                         <i class="fas fa-video"></i>
                     </button>
-                    <button class="action-btn" title="More">
+                    <!-- <button class="action-btn" title="More">
                         <i class="fas fa-ellipsis-v"></i>
-                    </button>
+                    </button> -->
                 </div>
             </div>
 
@@ -357,10 +415,10 @@
             <!-- Message Input -->
             <div class="message-input-area">
                 <div class="input-container">
-                    <button class="input-btn" title="Emoji">
+                    <button class="input-btn" title="Emoji" id="emojiBtn">
                         <i class="fas fa-smile"></i>
                     </button>
-                    <button class="input-btn" title="Attach">
+                    <button class="input-btn" title="Attach" id="attachBtn">
                         <i class="fas fa-paperclip"></i>
                     </button>
                     <div class="text-input-container">
@@ -376,20 +434,8 @@
             </div>
         </div>
     </div>
-    
-    <script src="/src/scripts/main.js"></script>
-    <script src="/src/scripts/chat.js"></script>
-    <script>
-        // Initialize chat manager after DOM and scripts are loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof TranslaTalkChatManager !== 'undefined') {
-                const chatManager = new TranslaTalkChatManager()
-                window.chatManager = chatManager
-                console.log('Chat manager initialized successfully')
-            } else {
-                console.error('TranslaTalkChatManager is not defined')
-            }
-        })
-    </script>
+
+
 </body>
+
 </html>
